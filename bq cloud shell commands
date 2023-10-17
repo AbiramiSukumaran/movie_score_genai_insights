@@ -1,0 +1,17 @@
+1. Create a dataset:
+In Cloud Shell, use the bq mk command to create a dataset called "movie_insights"
+bq mk --location=us-central1 movie_insights
+
+2. Clone the source file to you Cloud Shell Machine:
+git clone https://github.com/AbiramiSukumaran/movie_score_genai_insights
+
+3. Navigate to the new project directory that is created in your Cloud Shell Machine:
+cd movie_score_genai_insights
+
+4. Use the bq load command to load your CSV file into a BigQuery table (please note that you can also directly upload from the BigQuery UI):
+bq load --source_format=CSV --skip_leading_rows=1 movie_insights.movie_score \
+./movies_data.csv \ Id:numeric,name:string,rating:string,genre:string,year:numeric,released:string,score:string,director:string,writer:string,star:string,country:string,budget:numeric,company:string,runtime:numeric,data_cat:string
+
+5. You can query a sample to check if the table movie_score and the data are created in the dataset:
+bq query --use_legacy_sql=false \
+SELECT name, rating, genre, runtime FROM movies.movies_score limit 3;
