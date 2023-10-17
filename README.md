@@ -1,6 +1,9 @@
 # movie_score_genai_insights
 Build a Movie Score prediction and prescription insights with BigQuery and Vertex AI PaLM API.
 
+**Dataset**
+In this use case, we will use the [movies_data]([url](https://github.com/AbiramiSukumaran/movie_score_genai_insights/blob/main/movies_data.csv)) dataset derived from [movielens]([url](https://grouplens.org/datasets/movielens/1m/)) source.
+
 **Data to ML**
 1. Movies dataset stored in BigQuery
 2. Movie Score / User Rating Prediction Model based on GENRE and RUNTIME with BQML trained
